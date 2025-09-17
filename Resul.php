@@ -7,8 +7,8 @@
 </head>
 <body>
 <?php 
-$nombre=$_POST["nombre"];
-$pass=$_POST["pass"];
+$nombre = $_POST["nombre"];
+$pass = $_POST["pass"];
 
 if (($nombre == "martin") && ($pass == "martin")) {
     # code...
