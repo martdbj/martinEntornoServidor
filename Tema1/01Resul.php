@@ -14,7 +14,7 @@ if (($nombre == "martin") && ($pass == "martin")) {
     # code...
     echo "Welcome th our site!";
 } else {
-    header("Location: index.html", true, 301);
+    header("Location: 01PrimerEjemplo.html", true, 301);
 }
 ?>
 </body>
