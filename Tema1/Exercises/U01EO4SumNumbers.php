@@ -12,7 +12,7 @@
     if (!isset($_SESSION["numeros"])) {
     $_SESSION["numeros"] = [];
     }
-    // Comprobación de que el número se ha enviado
+    
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (isset($_POST["numero"]) && is_numeric($_POST["numero"]))  {
         $num = (int)$_POST["numero"];
@@ -28,9 +28,9 @@
     }
 ?>
 
-<!-- Formulario sencillo -->
+
 <form method="post">
-    <input type="text" name="numero" autofocus>
+    <input type="text" name="numero">
     <button type="submit">Enviar</button>
 </form>
 </body>
