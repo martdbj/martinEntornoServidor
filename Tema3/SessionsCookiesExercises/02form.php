@@ -10,11 +10,11 @@
 <body>
     <?php
     if (isset($_COOKIE["username"])) {
-        header("Location: 01success.php");
+        header("Location: 02success.php");
     }
     ?>
     
-    <form action="01form.php" method="post">
+    <form action="02form.php" method="post">
         <h1>Login</h1>
         <br>
         <label for="username">Username: </label>
@@ -31,8 +31,11 @@
         $cookie_username_value = $_POST['username'];
 
         setcookie("username", $cookie_username_value, time() + 3600, "/");
+        if (!isset($_COOKIE["lastLogin"]) && !isset($_COOKIE["username"])) {
+            setcookie("lastLogin", date("Y-m-d h:i:sa", $d), time() + 3600, "/");
+        }
 
-        header("Location: 01success.php");
+        header("Location: 02success.php");
     }
     ?>
 </body>
