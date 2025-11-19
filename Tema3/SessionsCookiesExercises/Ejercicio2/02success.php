@@ -7,24 +7,23 @@
 </head>
 <body>
     <h1>UserPage</h1>
-    <form action="01success.php" method="post">
+    <form action="02success.php" method="post">
         <button type="submit">No eres tú?</button>
     </form>
     <?php 
-    if (isset($_COOKIE["username"]) && isset($_COOKIE["password"])) {
+    if (isset($_COOKIE["username"])) {
         $username = $_COOKIE["username"];
-        $password = $_COOKIE["password"];
-
+        $lastLogin = $_COOKIE["lastLogin"];
         echo '<p>Hello ' . $username . " nice to see you again </p>";
+        echo '<p>Last login: ' . $lastLogin;
     } else {
         echo '<p>Something bad happened</p>';
     }
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         setcookie("username", "", time() - 3600, "/");
-        setcookie("password", "", time() - 3600, "/");
-
-        header("Location: 01form.php");
+        setcookie("lastLogin", "", time() - 3600, "/");
+        header("Location: 02form.php");
     }
     ?>
 </body>

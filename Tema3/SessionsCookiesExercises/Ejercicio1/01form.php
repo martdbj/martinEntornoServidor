@@ -9,7 +9,7 @@
 
 <body>
     <?php
-    if (isset($_COOKIE["username"]) && isset($_COOKIE["password"])) {
+    if (isset($_COOKIE["username"])) {
         header("Location: 01success.php");
     }
     ?>
@@ -31,11 +31,7 @@
         $cookie_username_name = "username";
         $cookie_username_value = $_POST['username'];
 
-        $cookie_password_name = "password";
-        $cookie_password_value = $_POST['password'];
-
         setcookie($cookie_username_name, $cookie_username_value, time() + 3600, "/");
-        setcookie($cookie_password_name, $cookie_password_value, time() + 3600, "/");
 
         header("Location: 01success.php");
     }
