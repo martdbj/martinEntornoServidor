@@ -45,6 +45,10 @@
     <form action="" method="post">
         <button type="submit" name="next">Next</button>
     </form>
+    <br><br>
+    <form action="" method="post">
+        <button type="submit" name="delete_cookies">Delete cookies</button>
+    </form>
 
     <?php
     session_start();
@@ -55,34 +59,57 @@
         $_SESSION['jumper'] = [];
     }
 
+    // If a cookie is set, we print its values.
+    // If a cookie is set, we create a $sesion with the same name.
+    if (isset($_COOKIE['tshirt'])) {
+        $_SESSION['tshirt'] = json_decode($_COOKIE['tshirt'], true);
+    }
+    if (isset($_COOKIE['jeans'])) {
+        $_SESSION['jeans'] = json_decode($_COOKIE['jeans'], true);
+    }
+    if (isset($_COOKIE['jumper'])) {
+        $_SESSION['jumper'] = json_decode($_COOKIE['jumper'], true);
+    }
+
     if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['delete_session'])) {
         session_unset();
     }
 
+    if (isset($_POST['delete_cookies'])) {
+        setcookie("tshirt", "", time() - 3600, "/");
+        setcookie("jumper", "", time() - 3600, "/");
+        setcookie("jeans", "", time() - 3600, "/");
+    }
+
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        // Delete the cookie for creating a new shopping cart
+        if (isset($_COOKIE['tshirt'])) {
+            setcookie('tshirt', "", time() - 3600, "/");
+        }
+
         if (isset($_POST['products'])) {
             $tshirt = $_POST['products'];
             $tshirt_filter = array_filter($tshirt, function ($quantity) {
                 return (int)$quantity > 0;
             });
             $_SESSION['tshirt'] = $tshirt_filter;
+        }
+    }
 
-            echo "<h3>Saved products:</h3>";
-            if (isset($_SESSION['tshirt'])) {
-                foreach ($_SESSION['tshirt'] as $nombre => $quantity) {
-                    echo "<p>$nombre: $quantity</p>";
-                }
-            }
-            if (isset($_SESSION['jeans'])) {
-                foreach ($_SESSION['jeans'] as $nombre => $quantity) {
-                    echo "<p>$nombre: $quantity</p>";
-                }
-            }
-            if (isset($_SESSION['jumper'])) {
-                foreach ($_SESSION['jumper'] as $nombre => $quantity) {
-                    echo "<p>$nombre: $quantity</p>";
-                }
-            }
+    echo "<h3>Saved products:</h3>";
+    if (isset($_SESSION['tshirt'])) {
+        foreach ($_SESSION['tshirt'] as $nombre => $quantity) {
+            echo "<p>$nombre: $quantity</p>";
+        }
+    }
+    if (isset($_SESSION['jeans'])) {
+        foreach ($_SESSION['jeans'] as $nombre => $quantity) {
+            echo "<p>$nombre: $quantity</p>";
+        }
+    }
+    if (isset($_SESSION['jumper'])) {
+        foreach ($_SESSION['jumper'] as $nombre => $quantity) {
+            echo "<p>$nombre: $quantity</p>";
         }
     }
 
