@@ -76,7 +76,7 @@
         }
         if (isset($_COOKIE['jumper'])) {
             $_SESSION['jumper'] = json_decode($_COOKIE['jumper'], true);
-        }
+        }       
 
         if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['delete_session'])) {
             session_unset();
