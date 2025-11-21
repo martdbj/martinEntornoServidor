@@ -30,11 +30,7 @@
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $cookie_username_value = $_POST['username'];
 
-<<<<<<< HEAD:Tema3/SessionsCookiesExercises/01form.php
         setcookie("username", $cookie_username_value, time() + 3600, "/");
-=======
-        setcookie($cookie_username_name, $cookie_username_value, time() + 3600, "/");
->>>>>>> a75427ef174345455a21cae204c307ca748e9d43:Tema3/SessionsCookiesExercises/Ejercicio1/01form.php
 
         header("Location: 01success.php");
     }
