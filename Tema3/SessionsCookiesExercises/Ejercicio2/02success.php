@@ -8,7 +8,7 @@
 <body>
     <h1>UserPage</h1>
     <form action="02success.php" method="post">
-        <button type="submit">No eres tú?</button>
+        <button type="submit" name="Logout">No eres tú?</button>
     </form>
     <?php 
     if (isset($_COOKIE["username"])) {
@@ -20,11 +20,11 @@
         echo '<p>Something bad happened</p>';
     }
 
-    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    if (isset($_POST['Logout'])) {
         setcookie("username", "", time() - 3600, "/");
         setcookie("lastLogin", "", time() - 3600, "/");
         header("Location: 02form.php");
     }
     ?>
 </body>
-</html>
+</html>  
