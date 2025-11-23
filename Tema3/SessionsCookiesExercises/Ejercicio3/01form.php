@@ -32,7 +32,7 @@
 
         setcookie("username", $cookie_username_value, time() + 3600, "/");
 
-        header("Location: 01tsuccess.php");
+        header("Location: 01tshirt.php");
     }
     ?>
 </body>

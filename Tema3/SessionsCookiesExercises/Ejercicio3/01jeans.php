@@ -49,6 +49,9 @@
     </form>
     <?php
     session_start();
+    
+
+
     if (!isset($_SESSION)) {
         $_SESSION['tshirt'] = [];
         $_SESSION['jeans'] = [];

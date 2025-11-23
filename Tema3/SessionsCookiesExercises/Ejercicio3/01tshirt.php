@@ -52,17 +52,18 @@
 
     <?php
     session_start();
+    $username = $_COOKIE["username"];
 
     if (!isset($_SESSION)) {
-        $_SESSION['tshirt'] = [];
-        $_SESSION['jeans'] = [];
-        $_SESSION['jumper'] = [];
+        $_SESSION['tshirt-' . $username] = [];
+        $_SESSION['jeans-' . $username] = [];
+        $_SESSION['jumper-' . $username] = [];
     }
 
     // If a cookie is set, we print its values.
     // If a cookie is set, we create a $sesion with the same name.
     if (isset($_COOKIE['tshirt'])) {
-        $_SESSION['tshirt'] = json_decode($_COOKIE['tshirt'], true);
+        $_SESSION['tshirt'] = explode(",", $_COOKIE['tshirt-' . $username]);
     }
     if (isset($_COOKIE['jeans'])) {
         $_SESSION['jeans'] = json_decode($_COOKIE['jeans'], true);
@@ -76,14 +77,14 @@
     }
 
     if (isset($_POST['delete_cookies'])) {
-        setcookie("tshirt", "", time() - 3600, "/");
+        setcookie("tshirt" . $username, "", time() - 3600, "/");
         setcookie("jumper", "", time() - 3600, "/");
         setcookie("jeans", "", time() - 3600, "/");
     }
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         // Delete the cookie for creating a new shopping cart
-        if (isset($_COOKIE['tshirt'])) {
+        if (isset($_COOKIE['tshirt-' . $username])) {
             setcookie('tshirt', "", time() - 3600, "/");
         }
 

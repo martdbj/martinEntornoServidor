@@ -36,8 +36,9 @@
     </form>
     <?php
     session_start();
+    $username = $_COOKIE["username"];
     if (!isset($_SESSION)) {
-        $_SESSION['tshirt'] = [];
+        $_SESSION['tshirt' . $username] = [];
         $_SESSION['jeans'] = [];
         $_SESSION['jumper'] = [];
     };
@@ -47,7 +48,7 @@
     }
 
     if (isset($_POST['delete_cookies'])) {
-        setcookie("tshirt", "", time() - 3600, "/");
+        setcookie("tshirt" . $username, "", time() - 3600, "/");
         setcookie("jumper", "", time() - 3600, "/");
         setcookie("jeans", "", time() - 3600, "/");
     }
@@ -57,8 +58,7 @@
         foreach ($_SESSION['tshirt'] as $nombre => $quantity) {
             echo "<p>$nombre: $quantity</p>";
         }
-
-        $cookieData = json_encode($_SESSION['tshirt']);
+        $cookieData= implode(",", $_SESSION['tshirt']);
         setcookie("tshirt", $cookieData, time() + 3600, "/");
     }
     if (isset($_SESSION['jeans'])) {
