@@ -77,15 +77,16 @@
                 $favouriteUserElements = explode(",", $favouriteCookie);
                 $favouriteUserCount = count($favouriteUserElements);
 
-                foreach ($favouriteUserElements as $userElement) {
-                    if (in_array($userElement, $_POST['colores'])) {
-                        unset($userElement);
+                for ($i = 0; $i < $favouriteUserCount; $i++) {
+                    if (in_array($favouriteUserElements[$i], $_POST['colores'])) {
+                        unset($favouriteUserElements[$i]);
                     }
                 }
             }
             $selected = implode(",", $favouriteUserElements);
 
             setcookie("favourite-" . $username, $selected, time() + 3600, "/");
+
             header("Refresh:0");
         }
     }
