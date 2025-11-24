@@ -23,16 +23,14 @@
         <label for="password">Password: </label>
         <input type="password" name="password" id="" placeholder="*************">
         <br><br>
-        <button type="submit">Submit</button>
+        <button type="submit" name="bazinga">Submit</button>
     </form>
 
     <?php
-    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    if (isset($_POST['bazinga'])) {
         $cookie_username_value = $_POST['username'];
-
         setcookie("username", $cookie_username_value, time() + 3600, "/");
-
-        header("Location: 01tsuccess.php");
+        header("Location: 01success.php");
     }
     ?>
 </body>

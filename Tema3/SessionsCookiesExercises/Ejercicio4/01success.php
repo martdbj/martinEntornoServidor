@@ -16,10 +16,9 @@
         if (isset($_COOKIE['favourite-' . $username])) {
             $favouriteCookie = $_COOKIE['favourite-' . $username];
             $favouriteUserElements = explode(",", $favouriteCookie);
-            $favouriteUserCount = count($favouriteUserElements);
-            echo '<form action="" method="post">';
-            for ($i = 0; $i < $favouriteUserCount; $i++) {
-                echo '<p value="' . $favouriteUserElements[$i] . '">' . $favouriteUserElements[$i] . '</p>';
+            
+            foreach ($favouriteUserElements as $userElement) {
+                echo '<p value="' . $userElement . '">' . $userElement . '</p>';
             }
         }
     } else {
@@ -56,11 +55,10 @@
             if (isset($_COOKIE['favourite-' . $username])) {
                 $favouriteCookie = $_COOKIE['favourite-' . $username];
                 $favouriteUserElements = explode(",", $favouriteCookie);
-                $favouriteUserCount = count($favouriteUserElements);
-
-                for ($i = 0; $i < $favouriteUserCount; $i++) {
-                    if (!(in_array($favouriteUserElements[$i], $_POST['colores']))) {
-                        $selected .= "," . $favouriteUserElements[$i];
+                
+                foreach ($favouriteUserElements as $userElement) {
+                    if (!(in_array($userElement, $_POST['colores']))) { 
+                        $selected .= "," . $userElement;
                     }
                 }
             }
@@ -79,9 +77,9 @@
                 $favouriteUserElements = explode(",", $favouriteCookie);
                 $favouriteUserCount = count($favouriteUserElements);
 
-                for ($i = 0; $i < $favouriteUserCount; $i++) {
-                    if (in_array($favouriteUserElements[$i], $_POST['colores'])) {
-                        unset($favouriteUserElements[$i]);
+                foreach ($favouriteUserElements as $userElement) {
+                    if (in_array($userElement, $_POST['colores'])) {
+                        unset($userElement);
                     }
                 }
             }
@@ -93,6 +91,4 @@
     }
     ?>
 </body>
-
-
 </html>

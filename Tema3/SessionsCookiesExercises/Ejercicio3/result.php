@@ -38,7 +38,7 @@
     session_start();
     $username = $_COOKIE["username"];
     if (!isset($_SESSION)) {
-        $_SESSION['tshirt' . $username] = [];
+        $_SESSION['tshirt'] = [];
         $_SESSION['jeans'] = [];
         $_SESSION['jumper'] = [];
     };
@@ -48,9 +48,9 @@
     }
 
     if (isset($_POST['delete_cookies'])) {
-        setcookie("tshirt" . $username, "", time() - 3600, "/");
-        setcookie("jumper", "", time() - 3600, "/");
-        setcookie("jeans", "", time() - 3600, "/");
+        setcookie("tshirt-" . $username, "", time() - 3600, "/");
+        setcookie("jumper-" . $username, "", time() - 3600, "/");
+        setcookie("jeans-" . $username, "", time() - 3600, "/");
     }
 
     echo "<h3>Saved products:</h3>";
@@ -58,8 +58,8 @@
         foreach ($_SESSION['tshirt'] as $nombre => $quantity) {
             echo "<p>$nombre: $quantity</p>";
         }
-        $cookieData= implode(",", $_SESSION['tshirt']);
-        setcookie("tshirt", $cookieData, time() + 3600, "/");
+        $cookieData = json_encode($_SESSION['tshirt']);
+        setcookie("tshirt-" . $username, $cookieData, time() + 3600, "/");
     }
     if (isset($_SESSION['jeans'])) {
         foreach ($_SESSION['jeans'] as $nombre => $quantity) {
@@ -67,7 +67,7 @@
         }
         
         $cookieData = json_encode($_SESSION['jeans']);
-        setcookie("jeans", $cookieData, time() + 3600, "/");
+        setcookie("jeans-" . $username, $cookieData, time() + 3600, "/");
     }
     if (isset($_SESSION['jumper'])) {
         foreach ($_SESSION['jumper'] as $nombre => $quantity) {
@@ -75,7 +75,7 @@
         }
         
         $cookieData = json_encode($_SESSION['jumper']);
-        setcookie("jumper", $cookieData, time() + 3600, "/");
+        setcookie("jumper-" . $username, $cookieData, time() + 3600, "/");
     }
 
     ?>
