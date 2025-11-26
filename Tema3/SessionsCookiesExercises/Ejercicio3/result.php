@@ -45,12 +45,14 @@
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['delete_session'])) {
         session_unset();
+        header("Refresh:0");
     }
 
     if (isset($_POST['delete_cookies'])) {
         setcookie("tshirt-" . $username, "", time() - 3600, "/");
         setcookie("jumper-" . $username, "", time() - 3600, "/");
         setcookie("jeans-" . $username, "", time() - 3600, "/");
+        header("Refresh:0");
     }
 
     echo "<h3>Saved products:</h3>";
