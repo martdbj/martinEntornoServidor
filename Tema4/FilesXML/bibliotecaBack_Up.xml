@@ -18,8 +18,7 @@
             <editorial>Booket</editorial>
             <anio_edicion>2021</anio_edicion>
             <estado>libre</estado>
-            <fecha_devolucion>24-12-2025</fecha_devolucion>
-        <fecha_devolucion>24-12-2025</fecha_devolucion></libro>
+        </libro>
         <libro>
             <titulo>Un mundo feliz</titulo>
             <isbn>8497594258</isbn>
@@ -27,7 +26,7 @@
             <editorial>Debolsillo</editorial>
             <anio_edicion>2003</anio_edicion>
             <estado>libre</estado>
-        <fecha_devolucion>24-12-2025</fecha_devolucion></libro>
+        </libro>
         <libro>
             <titulo>Orgullo y prejuicio</titulo>
             <isbn>8491051325</isbn>
