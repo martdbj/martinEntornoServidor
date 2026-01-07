@@ -79,21 +79,27 @@ file_put_contents("lendBooks.xml", $finalLend->saveHTML());
     <br>
     <h4>Add Book</h4>
     <label for="name">Name: </label>
-    <input type="text" name="name" required>
+    <input type="text" name="name" >
     <br>
     <label for="isbn">ISBN: </label>
-    <input type="text" name="isbn" required>
+    <input type="text" name="isbn" >
     <br>
     <label for="autor">Autor: </label>
-    <input type="text" name="autor" required>
+    <input type="text" name="autor" >
     <br>
     <label for="editorial">Editorial: </label>
-    <input type="text" name="editorial" required>
+    <input type="text" name="editorial" >
     <br>
     <label for="anio_edicion">Año edición: </label>
-    <input type="number" name="anio_edicion" required>
+    <input type="number" name="anio_edicion" >
     <br>
     <button name="addBookButton">Add</button>
+    <br>
+    <h4>Delete</h4>
+    <label for="isbnD">ISBN</label>
+    <input type="number" name="isbnD">
+    <br>
+    <button name="deleteBookButton">Delete</button>
 </form>
 
 
@@ -124,9 +130,17 @@ if (isset($_POST['addBookButton'])) {
     addBook($name, $isbn, $author, $edit, $edit_year);
     header('Refresh: 0');
 }
+
+if (isset($_POST['deleteBookButton'])) {
+    if (isset($_POST['isbnD'])) {
+        $isbn = $_POST['isbnD'];
+        removeBook($isbn);
+    }
+}
 ?>
 
 <?php
+// Main Functions (Lend, Return, Add, Remove)
 function lendBook($selectedBooks)
 {
     $booksLibrary = new DOMDocument();
@@ -214,6 +228,23 @@ function addBook($name, $isbn, $author, $edit, $edit_year) {
         $libro->appendChild($lend);
     }
 
+    file_put_contents("biblioteca.xml", $booksLibrary->saveXML());
+}
+// Remove books by ISBN
+function removeBook($isbn) {
+    $booksLibrary = new DOMDocument();
+    $booksLibrary->load("biblioteca.xml");
+
+    $books = $booksLibrary->getElementsByTagName("libro");
+    $books = $booksLibrary->getElementsByTagName("libro");
+    foreach ($books as $book) {
+        $bookISBN = $book->getElementsByTagName("isbn");
+        $bookStatus = $book->getElementsByTagName("estado");
+
+        if ($bookISBN->item(0)->nodeValue == $isbn && $bookStatus->item(0)->nodeValue == "libre") {
+            $book->parentNode->removeChild($book);
+        }
+    }
     file_put_contents("biblioteca.xml", $booksLibrary->saveXML());
 }
 ?>
