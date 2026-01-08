@@ -42,7 +42,7 @@ if (isset($_POST['enviar'])) {
 
     mysqli_query($conexion, $sql);
 
-    header('Location: ModifyFootwear01.php');
+    header("Location: Menu.php");
 }
 ?>
     <h1>Edit - Footwear</h1>

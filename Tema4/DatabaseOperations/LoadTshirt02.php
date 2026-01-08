@@ -17,7 +17,12 @@ if (isset($_POST['enviar'])) {
         }
 
         $numr = mysqli_num_rows($resultado);
+
     }
+}
+
+if (isset($_POST['menu'])) {
+    header("Location: Menu.php");
 }
 ?>
 
@@ -89,3 +94,7 @@ function findIdWithMarca($marca, $marcas)
 }
 mysqli_close($conexion);
 ?>
+
+<form action="LoadTshirt02.php" method="post">
+    <button name="menu">Manu</button>
+</form>

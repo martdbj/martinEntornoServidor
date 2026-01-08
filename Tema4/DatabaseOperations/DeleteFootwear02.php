@@ -19,7 +19,7 @@ if (isset($_POST['enviar'])) {
         exit();
     }
 
-    echo "Done" . $size;
+    header("Location: Menu.php");
 }
 
 mysqli_close($conexion);

@@ -23,7 +23,7 @@ if (isset($_POST['enviar'])) {
 
     mysqli_query($conexion, $sql);
 
-    header('Location: InsertTrousers.php');
+    header("Location: Menu.php");
 }
 ?>
 

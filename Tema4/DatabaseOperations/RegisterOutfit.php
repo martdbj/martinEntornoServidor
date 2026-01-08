@@ -45,7 +45,7 @@ if (isset($_POST['enviar'])) {
         VALUES ('$fechaHoy', $personaID, $pantalonID, $camisetaID, $calzadoID)";
 
     mysqli_query($conexion, $sql);
-
+    header("Location: Menu.php");
 }
 ?>
     <h1>Edit - Footwear</h1>
