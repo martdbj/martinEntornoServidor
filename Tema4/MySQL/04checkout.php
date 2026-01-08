@@ -19,7 +19,6 @@ if (isset($_SESSION['tshirt'])) {
             </tr>";
 
     foreach ($_SESSION['tshirt'] as $id => $test) {
-        // Pasamos el ID directamente
         retrieveProductDataWithID($test, "camiseta", $conexion);
     }
     echo "</table>";
@@ -33,7 +32,6 @@ if (isset($_SESSION['trousers'])) {
             </tr>";
 
     foreach ($_SESSION['trousers'] as $id) {
-        // Pasamos el ID directamente
         retrieveProductDataWithID($id, "pantalon", $conexion);
     }
     echo "</table>";
@@ -47,7 +45,6 @@ if (isset($_SESSION['shoes'])) {
             </tr>";
 
     foreach ($_SESSION['shoes'] as $id) {
-        // Pasamos el ID directamente
         retrieveProductDataWithID($id, "calzado", $conexion);
     }
     echo "</table>";
@@ -55,7 +52,6 @@ if (isset($_SESSION['shoes'])) {
 
 // Función mejorada
 function retrieveProductDataWithID($productID, $productTable, $conexion) {
-    // 1. Buscamos SOLO el producto con ese ID (mucho más rápido)
     $resultado = mysqli_query($conexion, "SELECT * FROM $productTable WHERE id = $productID");
 
     $marcas = mysqli_query($conexion, "SELECT * FROM marca");
