@@ -1,13 +1,4 @@
 <?php
-
-
-ini_set('display_errors', 1);
-
-ini_set('display_startup_errors', 1);
-
-error_reporting(E_ALL);
-
-
 $conexion = mysqli_connect('localhost', 'fluza', '9481', 'ropa');
 
 $idFootWear = 0;
@@ -131,5 +122,5 @@ function findIdWithMarca($marca, $marcas)
     }
     return $id;
 }
-
+mysqli_close($conexion);
 ?>

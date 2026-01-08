@@ -17,7 +17,7 @@ $numr = mysqli_num_rows($resultado);
 ?>
 
 
-    <h1>El corte Inglés - Edit Footwear</h1>
+    <h1>Modify - Edit Footwear</h1>
     <table style="border:1px solid black">
         <tr style="text-align: center">
             <td>
@@ -102,5 +102,5 @@ function findIdWithMarca($marca, $marcas)
     }
     return $id;
 }
-
+mysqli_close($conexion);
 ?>
