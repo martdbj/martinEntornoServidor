@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="file:departamento.xsl"?>
+<biblioteca nombre="Luis Rosales">
+  <genero tipo="novela">
+    <libro>
+      <titulo>Cien años de soledad</titulo>
+      <isbn>8439732473</isbn>
+      <autor>Gabriel García Márquez</autor>
+      <editorial>Literatura Random House</editorial>
+      <anio_edicion>2017</anio_edicion>
+      <estado>libre</estado>
+    </libro>
+    <libro><titulo>1984</titulo><isbn>8423359395</isbn><autor>George Orwell</autor>+
+            <editorial>Booket</editorial>
+            <anio_edicion>2021</anio_edicion>
+            <estado>libre</estado>
+        </libro>
+    <libro>
+      <titulo>Orgullo y prejuicio</titulo>
+      <isbn>8491051325</isbn>
+      <autor>Jane Austen</autor>
+      <editorial>Penguin Clásicos</editorial>
+      <anio_edicion>2020</anio_edicion>
+      <estado>prestado</estado>
+      <fecha_devolucion>22/12/2021</fecha_devolucion>
+    </libro>
+    <libro>
+      <titulo>Lolita</titulo>
+      <isbn>8433960172</isbn>
+      <autor>Vladimir Nabokov</autor>
+      <editorial>Anagrama</editorial>
+      <anio_edicion>2003</anio_edicion>
+      <estado>libre</estado>
+    </libro>
+    <libro>
+      <titulo>Crimen y castigo</titulo>
+      <isbn>8497944763</isbn>
+      <autor>Fiódor Dostoyevski</autor>
+      <editorial>EDIMAT LIBROS</editorial>
+      <anio_edicion>2019</anio_edicion>
+      <estado>prestado</estado>
+      <fecha_devolucion>24/12/2021</fecha_devolucion>
+    </libro>
+    <libro>
+      <titulo>Madame Bovary</titulo>
+      <isbn>8415618840</isbn>
+      <autor>Gustave Flaubert</autor>
+      <editorial>Editorial Alma</editorial>
+      <anio_edicion>2018</anio_edicion>
+      <estado>libre</estado>
+    </libro>
+    <libro>
+      <titulo>Don Quijote de la Mancha</titulo>
+      <isbn>8420412147</isbn>
+      <autor>Miguel de Cervantes</autor>
+      <editorial>Alfaguara</editorial>
+      <anio_edicion>2021</anio_edicion>
+      <estado>prestado</estado>
+      <fecha_devolucion>26/12/2021</fecha_devolucion>
+    </libro>
+    <libro>
+      <titulo>El retrato de Dorian Gray</titulo>
+      <isbn>8467033932</isbn>
+      <autor>Oscar Wilde</autor>
+      <editorial>Austral</editorial>
+      <anio_edicion>2010</anio_edicion>
+      <estado>prestado</estado>
+      <fecha_devolucion>22/12/2021</fecha_devolucion>
+    </libro>
+    <libro>
+      <titulo>Ana Karenina</titulo>
+      <isbn>8415618883</isbn>
+      <autor>León Tolstói</autor>
+      <editorial>Alma</editorial>
+      <anio_edicion>2019</anio_edicion>
+      <estado>prestado</estado>
+      <fecha_devolucion>24/12/2021</fecha_devolucion>
+    </libro>
+    <libro>
+      <titulo>Los miserables</titulo>
+      <isbn>8491051120</isbn>
+      <autor>Victor Hugo</autor>
+      <editorial>Penguin Clásicos</editorial>
+      <anio_edicion>2021</anio_edicion>
+      <estado>prestado</estado>
+      <fecha_devolucion>13/12/2021</fecha_devolucion>
+    </libro>
+    <libro>
+      <titulo>Moby Dick</titulo>
+      <isbn>8418008083</isbn>
+      <autor>Herman Melville</autor>
+      <editorial>Editorial Alma</editorial>
+      <anio_edicion>2020</anio_edicion>
+      <estado>libre</estado>
+    </libro>
+    <libro>
+      <titulo>El amor en los tiempos del cólera</titulo>
+      <isbn>8439735421</isbn>
+      <autor>Gabriel García Márquez</autor>
+      <editorial>Literatura Random House</editorial>
+      <anio_edicion>2019</anio_edicion>
+      <estado>libre</estado>
+    </libro>
+    <libro>
+      <titulo>El señor de las moscas</titulo>
+      <isbn>8420674176</isbn>
+      <autor>William Golding</autor>
+      <editorial>Alianza Editorial</editorial>
+      <anio_edicion>2010</anio_edicion>
+      <estado>prestado</estado>
+      <fecha_devolucion>19/12/2021</fecha_devolucion>
+    </libro>
+    <libro>
+      <titulo>Lo que el viento se llevó</titulo>
+      <isbn>8413141281</isbn>
+      <autor>Margaret Mitchell</autor>
+      <editorial>B de Bolsillo</editorial>
+      <anio_edicion>2021</anio_edicion>
+      <estado>prestado</estado>
+      <fecha_devolucion>16/12/2021</fecha_devolucion>
+    </libro>
+    <libro>
+      <titulo>Matar a un ruiseñor</titulo>
+      <isbn>1947783548</isbn>
+      <autor>Harper Lee</autor>
+      <editorial>B de Bolsillo</editorial>
+      <anio_edicion>2018</anio_edicion>
+      <estado>libre</estado>
+    </libro>
+    <libro>
+      <titulo>El guardián entre el centeno</titulo>
+      <isbn>8420674206</isbn>
+      <autor>J. D. Salinger</autor>
+      <editorial>Alianza</editorial>
+      <anio_edicion>2010</anio_edicion>
+      <estado>libre</estado>
+    </libro>
+    <libro>
+      <titulo>Cumbres borrascosas</titulo>
+      <isbn>8491819436</isbn>
+      <autor>Emily Brontë</autor>
+      <editorial>Alianza</editorial>
+      <anio_edicion>2020</anio_edicion>
+      <estado>libre</estado>
+    </libro>
+    <libro>
+      <titulo>Mil soles espléndidos</titulo>
+      <isbn>8498382327</isbn>
+      <autor>Khaled Hosseini</autor>
+      <editorial>Salamandra</editorial>
+      <anio_edicion>2009</anio_edicion>
+      <estado>libre</estado>
+    </libro>
+    <libro>
+      <titulo>El gran Gatsby</titulo>
+      <isbn>8418395184</isbn>
+      <autor>F. Scott Fitzgerald</autor>
+      <editorial>Editorial Alma</editorial>
+      <anio_edicion>2021</anio_edicion>
+      <estado>prestado</estado>
+      <fecha_devolucion>03/01/2022</fecha_devolucion>
+    </libro>
+    <libro>
+      <titulo>Rebelión en la granja</titulo>
+      <isbn>8423359409</isbn>
+      <autor>George Orwell</autor>
+      <editorial>Booket</editorial>
+      <anio_edicion>2021</anio_edicion>
+      <estado>prestado</estado>
+      <fecha_devolucion>17/12/2021</fecha_devolucion>
+    </libro>
+    <libro>
+      <titulo>Frankenstein</titulo>
+      <isbn>8467039493</isbn>
+      <autor>Mary W. Shelley</autor>
+      <editorial>Austral</editorial>
+      <anio_edicion>2014</anio_edicion>
+      <estado>prestado</estado>
+      <fecha_devolucion>08/01/2022</fecha_devolucion>
+    </libro>
+    <libro>
+      <titulo>El médico</titulo>
+      <isbn>8496940004</isbn>
+      <autor>Noah Gordon</autor>
+      <editorial>Rocabolsillo</editorial>
+      <anio_edicion>2008</anio_edicion>
+      <estado>prestado</estado>
+      <fecha_devolucion>22/02/2022</fecha_devolucion>
+    </libro>
+    <libro>
+      <titulo>El perfume</titulo>
+      <isbn>8432251143</isbn>
+      <autor>Patrick Süskind</autor>
+      <editorial>Booket</editorial>
+      <anio_edicion>2011</anio_edicion>
+      <estado>prestado</estado>
+      <fecha_devolucion>22/02/2022</fecha_devolucion>
+    </libro>
+    <libro>
+      <titulo>La señora Dalloway</titulo>
+      <isbn>8446041162</isbn>
+      <autor>Virginia Woolf</autor>
+      <editorial>Akal</editorial>
+      <anio_edicion>2015</anio_edicion>
+      <estado>libre</estado>
+    </libro>
+  </genero>
+</biblioteca>
