@@ -50,7 +50,6 @@ if (isset($_SESSION['shoes'])) {
     echo "</table>";
 }
 
-// Función mejorada
 function retrieveProductDataWithID($productID, $productTable, $conexion) {
     $resultado = mysqli_query($conexion, "SELECT * FROM $productTable WHERE id = $productID");
 
